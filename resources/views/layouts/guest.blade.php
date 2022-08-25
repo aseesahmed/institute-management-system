@@ -46,20 +46,21 @@
 
                         <!-- Footer-->
                         <footer class="footer footer-alt">
-                            @if (Route::has('login'))
                                 @auth
                                     <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
                                 @else
-                                    <p class="text-muted">Already have account? 
-                                        <a href="{{ route('login') }}" class="text-muted ml-1"><b>Log In</b></a>
-                                    </p>
-                                    @if (Route::has('register'))
+                                    @if (Request::segment(1) == 'login')
+                                    
                                     <p class="text-muted">Dont have an account? 
                                         <a href="{{ route('register') }}" class="text-muted ml-1"><b>Register</b></a>
                                     </p>
                                     @endif
+                                    @if (Request::segment(1) == 'register')
+                                    <p class="text-muted">Already have account? 
+                                        <a href="{{ route('login') }}" class="text-muted ml-1"><b>Log In</b></a>
+                                    </p>
+                                    @endif
                                 @endauth
-                            @endif
                             {{-- <p class="text-muted">Already have account? 
                                 <a href="pages-login-2.html" class="text-muted ml-1"><b>Log In</b></a>
                             </p> --}}
