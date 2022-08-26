@@ -17,18 +17,18 @@
             @csrf
 
             <!-- Password -->
-            <div>
+            <div class="form-group">
                 <x-label for="password" :value="__('Password')" />
 
-                <x-input id="password" class="block mt-1 w-full"
+                <x-input id="password" class="form-control"
                                 type="password"
                                 name="password"
                                 required autocomplete="current-password" />
             </div>
 
-            <div class="flex justify-end mt-4">
-                <x-button>
-                    {{ __('Confirm') }}
+            <div class="form-group">
+                <x-button class="btn btn-primary btn-block">
+                    <i class="mdi mdi-account-circle"></i>{{ __('Confirm') }}
                 </x-button>
             </div>
         </form>
